@@ -142,48 +142,117 @@
           </div>
         </div>
       </div>
-      <!-- Contact With Me Section -->
+<!-- Contact With Me Section -->
 <div class="glass rounded-3xl p-6 sm:p-8 animate-slide-up mb-10">
-  <h2 class="text-center text-2xl sm:text-3xl font-bold text-white font-inter mb-6">Connect With Me</h2>
-  
-  <div class="flex flex-wrap justify-center gap-4">
-    <!-- Telegram -->
-    <a href="https://t.me/MrAlmas313" target="_blank"
-      class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-3 rounded-xl transition-all duration-300">
-      <i class="fab fa-telegram-plane text-lg"></i> Telegram Studio
-      <i class="fas fa-external-link-alt text-xs opacity-70"></i>
-    </a>
+  <h2 class="text-center text-2xl sm:text-3xl font-bold text-white font-inter mb-6">
+    Connect With Me
+  </h2>
+
+  <!-- Responsive 2x2 grid -->
+  <div class="grid grid-cols-2 gap-4 sm:gap-6 w-full">
 
     <!-- WhatsApp -->
-    <a href="https://wa.me/qr/L5EXJP2E4JHIM1" target="_blank"
-      class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-medium px-5 py-3 rounded-xl transition-all duration-300">
-      <i class="fab fa-whatsapp text-lg"></i> WhatsApp Chat
-      <i class="fas fa-external-link-alt text-xs opacity-70"></i>
+    <a href="https://wa.me/+923080671101" target="_blank"
+      class="flex flex-col items-center justify-center gap-2 bg-green-500 hover:bg-green-600 
+             text-white font-medium py-4 rounded-xl transition-all duration-300 text-sm sm:text-base">
+      <i class="fab fa-whatsapp text-2xl"></i>
+      WhatsApp
+    </a>
+        
+    <!-- Telegram -->
+    <a href="https://t.me/Weird.X" target="_blank"
+      class="flex flex-col items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 
+             text-white font-medium py-4 rounded-xl transition-all duration-300 text-sm sm:text-base">
+      <i class="fab fa-telegram-plane text-2xl"></i>
+      Telegram
     </a>
 
-    <!-- Personal Chat -->
-    <a href="https://wa.me/qr/L5EXJP2E4JHIM1" target="_blank"
-      class="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white font-medium px-5 py-3 rounded-xl transition-all duration-300">
-      <i class="fas fa-user text-lg"></i> Personal Chat
-      <i class="fas fa-external-link-alt text-xs opacity-70"></i>
-    </a>
 
     <!-- Email -->
     <a href="mailto:almasmahdi420@gmail.com"
-      class="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium px-5 py-3 rounded-xl transition-all duration-300">
-      <i class="fas fa-envelope text-lg"></i> Email Me
-      <i class="fas fa-external-link-alt text-xs opacity-70"></i>
+      class="flex flex-col items-center justify-center gap-2 bg-indigo-500 hover:bg-indigo-600 
+             text-white font-medium py-4 rounded-xl transition-all duration-300 text-sm sm:text-base">
+      <i class="fas fa-envelope text-2xl"></i>
+      Email Me
     </a>
 
     <!-- Instagram -->
-    <a href="https://www.instagram.com/unkno.wnx313/profilecard/?igsh=MXFtNmM4OHZlNzg1cw==" target="_blank"
-      class="flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-medium px-5 py-3 rounded-xl transition-all duration-300">
-      <i class="fab fa-instagram text-lg"></i> Instagram
-      <i class="fas fa-external-link-alt text-xs opacity-70"></i>
+    <a href="https://www.instagram.com/__weird.x" target="_blank"
+      class="flex flex-col items-center justify-center gap-2 bg-pink-500 hover:bg-pink-600 
+             text-white font-medium py-4 rounded-xl transition-all duration-300 text-sm sm:text-base">
+      <i class="fab fa-instagram text-2xl"></i>
+      Instagram
     </a>
+
   </div>
 </div>
 
+<!-- Direct Message Section -->
+<div class="glass rounded-3xl p-6 sm:p-8 animate-slide-up mb-10">
+  <h2 class="text-center text-2xl sm:text-3xl font-bold text-white font-inter mb-6">
+    Direct Message Me
+  </h2>
+
+  <form 
+    action="https://formspree.io/f/meodjkna" 
+    method="POST" 
+    class="space-y-5"
+  >
+    <!-- Name -->
+    <div>
+      <label class="text-gray-300 font-medium text-sm">Your Name</label>
+      <input
+        type="text"
+        name="name"
+        placeholder="Enter your name"
+        required
+        class="w-full mt-2 px-4 py-3 rounded-xl bg-white/10 text-white placeholder-gray-400 
+               border border-white/20 focus:border-blue-500 focus:ring-2 focus:ring-blue-600 
+               outline-none transition-all"
+      />
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label class="text-gray-300 font-medium text-sm">Your Email</label>
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+        class="w-full mt-2 px-4 py-3 rounded-xl bg-white/10 text-white placeholder-gray-400 
+               border border-white/20 focus:border-purple-500 focus:ring-2 focus:ring-purple-600 
+               outline-none transition-all"
+      />
+    </div>
+
+    <!-- Message -->
+    <div>
+      <label class="text-gray-300 font-medium text-sm">Your Message</label>
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Write your message..."
+        required
+        class="w-full mt-2 px-4 py-3 rounded-xl bg-white/10 text-white placeholder-gray-400 
+               border border-white/20 focus:border-pink-500 focus:ring-2 focus:ring-pink-600 
+               outline-none transition-all resize-none"
+      ></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 
+             text-white font-semibold text-base shadow-lg shadow-purple-800/30 
+             hover:scale-[1.03] hover:shadow-xl transition-all duration-300 flex items-center 
+             justify-center gap-2"
+    >
+      <i class="fas fa-paper-plane text-lg"></i>
+      Send Message
+    </button>
+  </form>
+</div>
 
       <!-- Footer -->
       <div class="text-center text-sm text-gray-400">
