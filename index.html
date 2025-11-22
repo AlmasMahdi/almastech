@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Almas - Developer & Creator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'typing': 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite',
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0px)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0px)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px #3b82f6' },
+                            '100%': { boxShadow: '0 0 40px #3b82f6, 0 0 60px #3b82f6' }
+                        },
+                        typing: {
+                            '0%': { width: '0' },
+                            '100%': { width: '100%' }
+                        },
+                        'blink-caret': {
+                            '0%, 50%': { borderColor: 'transparent' },
+                            '51%, 100%': { borderColor: '#3b82f6' }
+                        },
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #3b82f6;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        .glass {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        .gradient-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient-x 15s ease infinite;
+        }
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .neon-glow {
+            box-shadow: 0 0 5px theme('colors.blue.400'), 0 0 10px theme('colors.blue.400'), 0 0 15px theme('colors.blue.400');
+        }
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 tech-grid overflow-x-hidden">
+    <!-- Animated Blobs BG -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-float opacity-70"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-float opacity-70" style="animation-delay: 2s"></div>
+        <div class="absolute top-40 left-40 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-float opacity-70" style="animation-delay: 4s"></div>
+    </div>
+    
+    <div class="relative z-10 min-h-screen flex items-center justify-center p-2 sm:p-4">
+        <div class="w-full max-w-4xl">
+            <!-- Profile + Intro -->
+            <div class="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 mb-4 sm:mb-8 hover-lift animate-fade-in">
+                <div class="text-center">
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-glow">
+                        <a href="https://ibb.co/hx85h92k">
+                            <img src="https://i.ibb.co/mrzs1Thm/IMG-20250417-WA0021.jpg" alt="Logo" class="w-full h-full object-cover rounded-full">
+                        </a>
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl md:text-6xl font-bold font-inter mb-3 sm:mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                        👨‍💻 Welcome dear
+                    </h1>
+                    <p class="text-sm sm:text-xl md:text-2xl text-gray-300 font-mono animate-slide-up" style="animation-delay: 0.5s">
+                        Developer • Creator • Problem Solver
+                    </p>
+                </div>
+            </div>
+            
+            <!-- About and Skills -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 mb-4 sm:mb-8">
+                <!-- About Me -->
+                <div class="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 hover-lift animate-slide-up">
+                    <div class="flex items-center mb-4 sm:mb-6">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                            <i class="fas fa-user text-lg sm:text-xl text-white"></i>
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-white font-inter">About Me</h2>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-300 leading-relaxed mb-3 sm:mb-4">
+                        Hi! I'm a passionate <span class="text-blue-400 font-semibold">student</span> learning web and app development. 
+                        I love solving problems and building cool projects that make a difference. 😎
+                    </p>
+                    <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+                        I specialize in creating <span class="text-purple-400 font-semibold">APIs</span>, web and mobile applications, 
+                        plus app modding and reverse engineering. 🚀
+                    </p>
+                </div>
+                <!-- Skills -->
+                <div class="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 hover-lift animate-slide-up" style="animation-delay: 0.2s">
+                    <div class="flex items-center mb-4 sm:mb-6">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-orange-400 to-red-500 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
+                            <i class="fas fa-cog text-lg sm:text-xl text-white"></i>
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-white font-inter">Skills</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <div class="bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-3 sm:p-4 rounded-xl border border-blue-500/30">
+                            <i class="fas fa-globe-americas text-blue-400 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-xs sm:text-sm text-gray-300 font-medium">Web Development</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-green-500/20 to-blue-500/20 p-3 sm:p-4 rounded-xl border border-green-500/30">
+                            <i class="fas fa-mobile-alt text-green-400 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-xs sm:text-sm text-gray-300 font-medium">Mobile Apps</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 p-3 sm:p-4 rounded-xl border border-purple-500/30">
+                            <i class="fas fa-server text-purple-400 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-xs sm:text-sm text-gray-300 font-medium">API Development</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-red-500/20 to-orange-500/20 p-3 sm:p-4 rounded-xl border border-red-500/30">
+                            <i class="fas fa-shield-alt text-red-400 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-xs sm:text-sm text-gray-300 font-medium">Reverse Engineering</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Message Section -->
+            <div class="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 mb-4 sm:mb-8 animate-slide-up" style="animation-delay: 0.7s">
+                <h3 class="text-xl sm:text-2xl font-bold text-white text-center mb-4 sm:mb-8 font-inter">
+                    Direct Message Me
+                </h3>
+                <!-- Replace with your actual Formspree endpoint -->
+                <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="flex flex-col gap-4 max-w-xl mx-auto">
+                    <div>
+                        <label class="block mb-1 text-gray-300 font-medium" for="name">Your Name</label>
+                        <input required type="text" id="name" name="name" placeholder="John Doe"
+                            class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-blue-600 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 font-inter">
+                    </div>
+                    <div>
+                        <label class="block mb-1 text-gray-300 font-medium" for="email">Your Email</label>
+                        <input required type="email" id="email" name="email" placeholder="you@email.com"
+                            class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-blue-600 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 font-inter">
+                    </div>
+                    <div>
+                        <label class="block mb-1 text-gray-300 font-medium" for="message">Message</label>
+                        <textarea required id="message" name="message" rows="5" placeholder="Write your message here..."
+                            class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-blue-600 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 font-inter"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-xl flex items-center justify-center gap-2 text-white font-semibold font-inter transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20">
+                        <i class="fas fa-paper-plane text-lg group-hover:animate-bounce"></i>
+                        <span>Send Message</span>
+                    </button>
+                    <!-- Success & Error Messages -->
+                    <p id="form-success" class="hidden text-green-400 mt-2 text-center">Thank you! Your message has been sent.</p>
+                    <p id="form-error" class="hidden text-red-400 mt-2 text-center">Oops! Something went wrong. Please try again.</p>
+                </form>
+            </div>
+
+            <!-- Connect With Me Section -->
+            <div class="glass rounded-2xl sm:rounded-3xl p-4 sm:p-8 animate-slide-up" style="animation-delay: 1s">
+                <h3 class="text-xl sm:text-2xl font-bold text-white text-center mb-4 sm:mb-8 font-inter">Connect With Me</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
+                    <a href="https://wa.me/+923080671101" target="_blank" 
+                       class="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-4 sm:px-8 py-5 sm:py-8 rounded-xl sm:rounded-2xl flex items-center justify-center gap-3 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green-500/25 min-h-[72px]">
+                        <i class="fab fa-whatsapp text-xl sm:text-2xl group-hover:animate-bounce"></i>
+                        <span class="text-base sm:text-lg">WhatsApp Chat</span>
+                        <i class="fas fa-external-link-alt text-sm sm:text-base opacity-70"></i>
+                    </a>
+                    <a href="https://t.me/@Weird.X" target="_blank" 
+                       class="group bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 px-4 sm:px-8 py-5 sm:py-8 rounded-xl sm:rounded-2xl flex items-center justify-center gap-3 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 min-h-[72px]">
+                        <i class="fab fa-telegram-plane text-xl sm:text-2xl group-hover:animate-bounce"></i>
+                        <span class="text-base sm:text-lg">Telegram Studio</span>
+                        <i class="fas fa-external-link-alt text-sm sm:text-base opacity-70"></i>
+                    </a>
+                    <a href="mailto:your@email.com"
+                       class="group bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 px-4 sm:px-8 py-5 sm:py-8 rounded-xl sm:rounded-2xl flex items-center justify-center gap-3 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/25 min-h-[72px]">
+                        <i class="fas fa-envelope text-xl sm:text-2xl group-hover:animate-bounce"></i>
+                        <span class="text-base sm:text-lg">Email Me</span>
+                        <i class="fas fa-external-link-alt text-sm sm:text-base opacity-70"></i>
+                    </a>
+                    <a href="https://www.instagram.com/__weird.x" target="_blank" 
+                       class="group bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 px-4 sm:px-8 py-5 sm:py-8 rounded-xl sm:rounded-2xl flex items-center justify-center gap-3 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-pink-500/25 min-h-[72px]">
+                       <i class="fab fa-instagram text-xl sm:text-2xl group-hover:animate-bounce"></i>
+                       <span class="text-base sm:text-lg">Follow on Instagram</span>
+                       <i class="fas fa-external-link-alt text-sm sm:text-base opacity-70"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="text-center mt-6 sm:mt-12 animate-fade-in" style="animation-delay: 1.2s">
+                <div class="glass rounded-xl sm:rounded-2xl p-4 sm:p-6 inline-block">
+                    <p class="text-gray-400 font-mono text-xs sm:text-sm mb-2">
+                        Built with <span class="text-red-400 animate-pulse">⚡</span> and <span class="text-blue-400">💙</span> by AlmasStudio
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        // Ripple effect for all clickable elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            document.querySelectorAll('a, button').forEach(element => {
+                element.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    const ripple = document.createElement('span');
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('ripple');
+                    ripple.style.position = 'absolute';
+                    this.style.position = 'relative';
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+
+            // Simple fake message send logic
+            const contactForm = document.getElementById('contactForm');
+            contactForm?.addEventListener('submit', function(e) {
+                // If using Formspree's default, do NOT preventDefault and let Formspree handle
+                // However, if you want in-page success, comment out preventDefault and simulate async for demo
+                // Uncomment if you'd rather have in-page message confirmation for demo purpose
+                /*
+                e.preventDefault();
+                document.getElementById('form-success').classList.add('hidden');
+                document.getElementById('form-error').classList.add('hidden');
+                setTimeout(() => {
+                    document.getElementById('form-success').classList.remove('hidden');
+                    contactForm.reset();
+                }, 850);
+                */
+            });
+        });
+    </script>
+</body>
+</html>
